@@ -15,7 +15,6 @@ WiFiClient client;
 /*==================================== HARDWARE PINS ====================================*/
 const byte REFERENCE_3V3 = A3;
 const byte LIGHT = A1;
-const byte BATT = A2;
 
 /*====================================GLOBAL VARIABLES===================================*/
 char ssid[] = "<ssid>";       // Your network SSID (name) 
@@ -33,9 +32,6 @@ void setup() {
   configureSensors();
 
   Serial.println("Weather Shield online!");
-
-  // start serial port for debugging purposes
-  //Serial.begin(9600);
 
   // Attempt to connect to Wifi network:
   while (status != WL_CONNECTED) {
@@ -143,6 +139,7 @@ void readResponse() {
       char c = client.read();
       Serial.print(c);
   }
+  Serial.println("*******************************************");
 }
 
 // Returns the voltage of the light sensor based on the 3.3V rail
