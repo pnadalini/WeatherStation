@@ -3,7 +3,7 @@
 This project was built usin an Arduino Uno, it's used to get the readings of the weather usint a Weather Shield 
 and transmit the data over to a server using a Wifi Shield.
 
-###REQUIREMENTS:
+### REQUIREMENTS:
 
 - Arduino Uno
 - Weather Shield
@@ -11,7 +11,7 @@ and transmit the data over to a server using a Wifi Shield.
 - Battery or Power source for the Arduino
 
 
-###LIBRARIES:
+### LIBRARIES:
 
 - Wire.h
 - SparkFunMPL3115A2.h
