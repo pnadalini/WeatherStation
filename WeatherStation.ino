@@ -1,9 +1,9 @@
 /*====================================REGION LIBRARIES===================================*/
 #include <SPI.h> 
+#include <WiFi.h> 
 #include <Wire.h>              // I2C needed for sensors
 #include "SparkFunMPL3115A2.h" // Pressure sensor - Search "SparkFun MPL3115" and install from Library Manager
 #include "SparkFunHTU21D.h"    // Humidity sensor - Search "SparkFun HTU21D" and install from Library Manager
-#include <WiFi.h> 
 #include <ArduinoJson.h>       // Json object - Search "ArduinoJson" and install the newest version that's not in beta
 
 /*====================================REGION VARIABLES===================================*/
@@ -18,12 +18,11 @@ const byte LIGHT = A1;
 const byte BATT = A2;
 
 /*====================================GLOBAL VARIABLES===================================*/
-char ssid[] = "<ssid>"; // Your network SSID (name) 
-char pass[] = "<password>";         // Your network password
+char ssid[] = "<ssid>";       // Your network SSID (name) 
+char pass[] = "<password>";   // Your network password
 int status = WL_IDLE_STATUS;
 
 /*====================================ARDUINO METHODS===================================*/
-
 void setup() {
   Serial.begin(9600);
   Serial.println("Initializing components");
@@ -66,7 +65,6 @@ void loop() {
 }
 
 /*====================================CREATED METHODS===================================*/
-
 void configureSensors(){
   // Configure the pressure sensor
   pressureSensor.begin(); // Get sensor online
