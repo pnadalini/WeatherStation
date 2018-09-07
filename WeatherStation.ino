@@ -53,7 +53,7 @@ void loop() {
   waitForResponse();
   readResponse();
   // Give the web browser time to receive the data and wait time so the next weather reading begins
-  delay(10000);
+  delay(5000);
   // Close the connection:
   client.stop();
   Serial.println("client disonnected");
@@ -139,6 +139,7 @@ void readResponse() {
       char c = client.read();
       Serial.print(c);
   }
+  Serial.println("");
   Serial.println("*******************************************");
 }
 
